@@ -6,8 +6,8 @@ Es un proyecto que busca crear una pagina web donde se puedan subir y descargar 
 En el directorio principal del proyecto se pueden correr los siguientes scripts:
 ### `npm start`
 
-Corre la aplicacion en modo de desarrolo.\
+Corre la aplicacion en modo de desarrolo
 
 ### `npm install` 
 
-Installa las dependencias requeridas por el proyecto.\
+Instala las dependencias requeridas por el proyecto
