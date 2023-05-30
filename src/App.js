@@ -31,6 +31,10 @@ function App() {
               />
               <Button variant="outline-light">Buscar</Button>
             </Form>
+            <Nav>
+              <Nav.Link href="#home">Sign Up</Nav.Link>
+              <Nav.Link href="#link">Login</Nav.Link>
+            </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
