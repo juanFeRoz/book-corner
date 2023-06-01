@@ -1,49 +1,35 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import  Buscar from "./rpublicas/buscar"; 
+import Home from "./rpublicas/home";
+import Inicio from "./rpublicas/inicio";
+import Signup from "./rpublicas/signup";
+import Error404 from "./rpublicas/error404";
+import Autores from "./rpublicas/autores";
+import Generos from "./rpublicas/generos";
+import FechaPublica from "./rpublicas/fechaPublica";
+import Login from "./rpriv/login";
+import { BrowserRoute,Route,Routes,Navigate, BrowserRouter } from 'react-router-dom';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <Navbar bg="dark" expand="lg" variant="dark" >
-        <Container fluid>
-          <Navbar.Brand href="#home">Book Corner</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="#home">Inicio</Nav.Link>
-              <Nav.Link href="#link">Buscar</Nav.Link>
-              <NavDropdown title="Filtros" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Autores</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Generos</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Fecha Publicacion</NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-            <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Buscar Libros"
-                className="me-2"
-                aria-label="Search"
-              />
-              <Button variant="outline-light">Buscar</Button>
-            </Form>
-            <Nav>
-              <Nav.Link href="#home">Sign Up</Nav.Link>
-              <Nav.Link href="#link">Login</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/buscar" element={<Buscar/>}/>
+      <Route path="/inicio" element={<Inicio/>}/>
+      <Route path="/signup" element={<Signup/>}/>
+      <Route path="/autores" element={<Autores/>}/>
+      <Route path="/generos" element={<Generos/>}/>
+      <Route path="/fechaPublica" element={<FechaPublica/>}/>
+      <Route path="/login" element={<Login/>}/>
 
-      <Container>
-
-      </Container>
-    </div>
+      <Route path="*" element={<Error404/>}/>
+     
+    
+      
+    </Routes>
+    </BrowserRouter>
   );
 }
-
 export default App;
