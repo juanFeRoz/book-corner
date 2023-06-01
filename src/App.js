@@ -1,6 +1,5 @@
 import  Buscar from "./rpublicas/buscar"; 
 import Home from "./rpublicas/home";
-import Inicio from "./rpublicas/inicio";
 import Signup from "./rpublicas/signup";
 import Error404 from "./rpublicas/error404";
 import Autores from "./rpublicas/autores";
@@ -17,7 +16,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/buscar" element={<Buscar/>}/>
-      <Route path="/inicio" element={<Inicio/>}/>
+      <Route path="/inicio" element={<Home />}/>
       <Route path="/signup" element={<Signup/>}/>
       <Route path="/autores" element={<Autores/>}/>
       <Route path="/generos" element={<Generos/>}/>
