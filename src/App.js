@@ -1,4 +1,3 @@
-import  Buscar from "./rpublicas/buscar"; 
 import Home from "./rpublicas/home";
 import Signup from "./rpublicas/signup";
 import Error404 from "./rpublicas/error404";
@@ -15,7 +14,6 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home/>}/>
-      <Route path="/buscar" element={<Buscar/>}/>
       <Route path="/inicio" element={<Home />}/>
       <Route path="/signup" element={<Signup/>}/>
       <Route path="/autores" element={<Autores/>}/>

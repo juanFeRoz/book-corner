@@ -7,9 +7,9 @@ import Button from 'react-bootstrap/Button';
 
 import React from 'react'
 
-export default  function Home() {
- return (
-<div className="App">
+export default function Home() {
+  return (
+    <div className="App">
       <Navbar bg="dark" expand="lg" variant="dark" >
         <Container fluid>
           <Navbar.Brand href="/">Book Corner</Navbar.Brand>
@@ -17,12 +17,9 @@ export default  function Home() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="/inicio">Inicio</Nav.Link>
-              <Nav.Link href="/buscar">Buscar</Nav.Link>
-              <NavDropdown title="Filtros" id="basic-nav-dropdown">
-                <NavDropdown.Item href="/autores">Autores</NavDropdown.Item>
-                <NavDropdown.Item href="/generos">Generos</NavDropdown.Item>
-                <NavDropdown.Item href="/fechaPublica">Fecha Publicacion</NavDropdown.Item>
-              </NavDropdown>
+              <Nav.Link href="/autores">Autores</Nav.Link>
+              <Nav.Link href="/generos">Generos</Nav.Link>
+              <Nav.Link href="/fechaPublica">Fecha Publicacion</Nav.Link>
             </Nav>
             <Form className="d-flex">
               <Form.Control
@@ -45,5 +42,5 @@ export default  function Home() {
 
       </Container>
     </div>
-     );
- }
+  );
+}
