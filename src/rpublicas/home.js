@@ -1,4 +1,4 @@
-import { BarraNavegacion } from './barra-navegacion';
+import { BarraNavegacion } from '../barra-navegacion';
 import Container from 'react-bootstrap/Container';
 
 
