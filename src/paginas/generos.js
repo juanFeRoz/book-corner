@@ -1,5 +1,6 @@
 import React from 'react'
-import { BarraNavegacion } from '../barra-navegacion';
+import { BarraNavegacion } from '../navbar/barra-navegacion';
+
 
 export default function Generos() {
   return (
