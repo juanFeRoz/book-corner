@@ -5,7 +5,7 @@ import Error404 from "../paginas/error404"
 import Favoritos from "../rpriv/favoritos";
 import MiLista from "../rpriv/milista";
 import Inicio from "../paginas/inicio";
-
+import Encuesta from "../paginas/encuesta"
 
 const Router2 = () => {
   return (
@@ -18,6 +18,7 @@ const Router2 = () => {
         <Route path="/generos" element={<Generos />} />
         <Route path="/favoritos" element={<Favoritos />} />
         <Route path="/miLista" element={<MiLista />} />
+        <Route path="/encuesta" element={<Encuesta />} />
         <Route path="*" element={<Error404 />} />
         
     </Routes>

@@ -21,6 +21,7 @@ export function BarraNavegacion() {
           <Nav.Link href="/inicio">Inicio</Nav.Link>
           <Nav.Link href="/autores">Autores</Nav.Link>
           <Nav.Link href="/generos">Generos</Nav.Link>
+          <Nav.Link href="/encuesta">Encuesta de interés</Nav.Link>
         </Nav>
         <Form className="d-flex">
           <Form.Control type="search" placeholder="Buscar Libros" className="me-2" aria-label="Search" />
