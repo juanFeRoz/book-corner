@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import './styles.css'
 import divider from '../img/divider.png'
 
 
