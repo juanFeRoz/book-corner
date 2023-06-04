@@ -1,0 +1,16 @@
+*{
+    background-color: antiquewhite;
+}
+.ancho{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.mb-3{
+    width: 50%;
+}
+
+.espacio{
+    height: 20px;
+}
