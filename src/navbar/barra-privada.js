@@ -31,7 +31,7 @@ export default function BarraPrivada() {
           <Button variant="outline-light">Buscar</Button>
         </Form>
         <Nav>
-          <Button onClick={login}>Logout</Button>
+          <Button variant="outline-light" onClick={login}>Logout</Button>
         </Nav>
       </Navbar.Collapse>
     </Container>

@@ -29,7 +29,6 @@ export function BarraNavegacion() {
         <Nav>
           <Nav.Link href="/signup">Sign Up</Nav.Link>
           <Nav.Link href="/login">Login</Nav.Link>
-          <Button onClick={login}>Logout</Button>
         </Nav>
       </Navbar.Collapse>
     </Container>
