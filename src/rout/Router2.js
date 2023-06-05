@@ -6,11 +6,7 @@ import Favoritos from "../rpriv/favoritos";
 import MiLista from "../rpriv/milista";
 import Inicio from "../paginas/inicio";
 import Encuesta from "../paginas/encuesta"
-<<<<<<< HEAD
 import Nosotros from "../paginas/Nosotros"
-=======
-import Nosotros from "../paginas/Nosotros";
->>>>>>> c067125 (Implementar Footer)
 
 const Router2 = () => {
   return (
