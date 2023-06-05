@@ -5,8 +5,12 @@ import Generos from "../paginas/generos"
 import Error404 from "../paginas/error404"
 import Recuperacion from "../paginas/recuperacion"
 import Router2 from "./Router2"
+<<<<<<< HEAD
 import Nosotros from "../paginas/Nosotros"
 
+=======
+import Nosotros from "../paginas/Nosotros";
+>>>>>>> c067125 (Implementar Footer)
 
 const Router1 = () => {
   return (

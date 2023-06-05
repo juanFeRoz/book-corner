@@ -49,7 +49,11 @@ export default function Inicio() {
         </Row>
       </Container>
    
+<<<<<<< HEAD
    <Footer/>
+=======
+      <Footer/>
+>>>>>>> c067125 (Implementar Footer)
     </>
   );
 }
