@@ -1,6 +1,7 @@
 import React from 'react'
 import { BarraNavegacion } from '../navbar/barra-navegacion';
 import { Container, Row, Col } from 'react-bootstrap';
+import Footer from "../paginas/Footer.js"
 
 export default function Inicio() {
   return (
@@ -43,9 +44,16 @@ export default function Inicio() {
               <li>Guardar tus libros favoritos</li>
               <li>Escribir reseñas de los libros que hayas leido</li>
             </ul>
+            
           </Col>
         </Row>
       </Container>
+   
+<<<<<<< HEAD
+   <Footer/>
+=======
+      <Footer/>
+>>>>>>> c067125 (Implementar Footer)
     </>
   );
 }
