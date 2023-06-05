@@ -6,6 +6,7 @@ import Favoritos from "../rpriv/favoritos";
 import MiLista from "../rpriv/milista";
 import Inicio from "../paginas/inicio";
 import Encuesta from "../paginas/encuesta"
+import Nosotros from "../paginas/Nosotros"
 
 const Router2 = () => {
   return (
@@ -20,7 +21,8 @@ const Router2 = () => {
         <Route path="/miLista" element={<MiLista />} />
         <Route path="/encuesta" element={<Encuesta />} />
         <Route path="*" element={<Error404 />} />
-        
+        <Route path="/Nosotros" element={<Nosotros />} />
+
     </Routes>
    
     </>
