@@ -21,7 +21,7 @@ export function SignUpModal({
     </Modal.Header>
     <Modal.Body>
       <Container>
-        <form action="/action_page.php" className='ancho'>
+        <form action="/" className='ancho'>
 
           <div class="mb-3 mt-3">
             <label for="email" class="form-label" >Email:</label>
