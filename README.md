@@ -11,3 +11,6 @@ Corre la aplicacion en modo de desarrolo
 ### `npm install` 
 
 Instala las dependencias requeridas por el proyecto
+
+### `npm install react-icons --save`
+Agrega los iconos necesarios para el proyecto
