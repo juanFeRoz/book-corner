@@ -15,7 +15,7 @@ export function LoginModal({
 
   const validateEmail = () => {
     if (!email.includes("@")) {
-      setEmailError("Correo electrónico inválido");
+      setEmailError("Correo electrónico inválidoo");
       return false;
     }
     setEmailError("");
