@@ -2,18 +2,22 @@ import React from 'react'
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
+import { BarraNavegacion } from '../navbar/barra-navegacion';
+{/* Agregé la barra de navegacion  :) danna*/}
 
 
 const Encuesta =()=> {
   return (
+    <div style={{ backgroundColor: '#FEF9E7' }}>
+    <BarraNavegacion />{/* Así  :) danna*/}
     <Container>
-    <form>
+   {/*centré el formulatrio y lo puse para que no acepte sin el @ del correo*/ }
+    <form style ={{textAlign:'center'}}>
         <h2>Uso de internet en la casa </h2>
 
         <div class="mb-3 mt-3">
           <label for="text" class="form-label" >Nombre completo:</label>
-          <input type="text" class="form-control" id="email" placeholder="Enter email" name="email" autoComplete='off' />
+          <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre" name="name" autoComplete='off' />
         </div>
 
         <div class="mb-3">
@@ -27,11 +31,11 @@ const Encuesta =()=> {
         </div>
 
         <div class="form-group">
-        <label for="inputAddress2">Direccion</label>
+        <label for="inputAddress2">Ciudad</label>
         <input type="text" class="form-control" id="inputAddress2" placeholder="Ingrese su cuidad"/>
         </div>
        
-            <div class="form-group col-md-4">
+            <div class="form-group " >
                 <label for="inputState">Estrato social</label>
                 <select id="inputState" class="form-control">
                 <option selected>Seleccione</option>
@@ -99,6 +103,7 @@ const Encuesta =()=> {
             <option value="1">Claro</option>
             <option value="2">Telcel</option>
             <option value="3">Tigo</option>
+            <option value="3">Otro</option>
             </select>
         </div>
          
@@ -131,6 +136,7 @@ const Encuesta =()=> {
 
     </form>
   </Container>
+  </div>
   );
 }
 export default Encuesta;

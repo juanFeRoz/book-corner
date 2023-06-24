@@ -64,6 +64,9 @@ export function LoginModal({
                   {showPassword ? <FaEyeSlash /> : <FaEye />}
                 </Button>
               </InputGroup>
+              <Form.Label>
+              Forgot password
+              </Form.Label>
             </Form.Group>
             <Button type="submit">Login</Button>
           </Form>

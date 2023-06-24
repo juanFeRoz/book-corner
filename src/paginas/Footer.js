@@ -4,9 +4,7 @@ import g from "../img/g.png"
 import p from "../img/p.png"
 import t from "../img/t.png"
 import l from "../img/l.png"
-import { Link } from "react-router-dom";
-import Nosotros from "../paginas/Nosotros.js"
-import NavLink from "react-bootstrap";
+
 
 const Footer =() => {
     return (
@@ -16,26 +14,30 @@ const Footer =() => {
                     
                     <h2>Encuentranos en nuestras redes sociales 
                         <br/>
-                        <Nav.Link href="/Nosotros">Inicio
-                        Conoce sobre nosotros
+                        <Nav.Link href="/Nosotros" className="text-primary">
+                             {/* Cambia el color del enlace a azul  danna*/}
+                        <a>Conoce sobre nosotros</a>
                             </Nav.Link>
                             <br/>
-                            <Link to="https://github.com/juanFeRoz/book-corner/tree/contenido-pagina-principal">
-                             <img src={g} className="mx-2 m-auto" />
-                             </Link>
+                            
+                            {/* Cambié para que se vaya a otra pestaña cuando de en los iconos :) danna*/}
+                             <a href="https://github.com/juanFeRoz/book-corner/tree/contenido-pagina-principal" target="_blank" rel="noopener noreferrer">
+                                <img src={g} className="mx-2 m-auto" />
+                            </a>
 
-                             <Link to="https://es-la.facebook.com/">
-                             <img src={p} className="mx-2 m-auto" />
-                             </Link>
+                            <a href="https://es-la.facebook.com/" target="_blank" rel="noopener noreferrer">
+                                <img src={p} className="mx-2 m-auto" />
+                            </a>
 
-                             <Link to="https://twitter.com/github?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
-                             <img src={t} className="mx-2  m-auto" />
-                             </Link>
-                             <Link to="https://www.linkedin.com/company/github">
-                             <img src={l} className="mx-2  m-auto" />
-                             </Link>
+                            <a href="https://twitter.com/github?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" rel="noopener noreferrer">
+                                <img src={t} className="mx-2  m-auto" />
+                            </a>
 
-                             </h2>
+                            <a href="https://www.linkedin.com/company/github" target="_blank" rel="noopener noreferrer">
+                                <img src={l} className="mx-2  m-auto" />
+                            </a>
+
+                            </h2>
                     </Row>
                 </Container>
             </footer>

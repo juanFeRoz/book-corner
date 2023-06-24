@@ -1,13 +1,13 @@
 import React from 'react'
-import { BarraNavegacion } from '../navbar/barra-navegacion';
-
-
 import Accordion from 'react-bootstrap/Accordion';
-
+import { BarraNavegacion } from '../navbar/barra-navegacion';
+{/* Agregé la barra de navegacion  :) danna*/}
 function BasicExample() {
   return (
+    <div>
+    <BarraNavegacion />
     <Accordion defaultActiveKey="0">
-      <Accordion.Item eventKey="0">
+      <Accordion.Item eventKey="0" accordion-color>
         <Accordion.Header>Gabriel García Márquez</Accordion.Header>
         <Accordion.Body>
         Gabriel García Márquez. (6 de marzo de 1927, Aracataca, Colombia - 17 de abril de 2014, México D.F.). Escritor y periodista colombiano.
@@ -22,6 +22,7 @@ function BasicExample() {
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
+    </div>
   );
 }
 

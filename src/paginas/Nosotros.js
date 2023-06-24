@@ -1,11 +1,12 @@
 import React from 'react'
 import { BarraNavegacion } from '../navbar/barra-navegacion';
-
-
 import Accordion from 'react-bootstrap/Accordion';
-
+{/* Agregé la barra de navegacion  :) danna*/}
 function Nosotros() {
   return (
+    
+    <div>
+    <BarraNavegacion />
     <Accordion defaultActiveKey="0">
       <Accordion.Item eventKey="0">
         <Accordion.Header>Integrante 1</Accordion.Header>
@@ -44,6 +45,7 @@ function Nosotros() {
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
+    </div>
   );
 }
 

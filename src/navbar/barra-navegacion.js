@@ -24,10 +24,11 @@ export function BarraNavegacion() {
   const [showSignUp, setShowSignUp] = useState(false);
   const handleCloseSignUp = () => setShowSignUp(false);
   const handleShowSignUp = () => setShowSignUp(true);
-
-  return <Navbar bg="dark" expand="lg" variant="dark">
+{/* Le agregé color a la navbar para que no de vibras de funeral :) danna*/}
+  return <Navbar expand="lg" className="navbar navbar-light" style={{ backgroundColor: '#EBDEF0' }}>
     <Container fluid>
-      <Navbar.Brand href="/">Book Corner</Navbar.Brand>
+      {/* Cambié la letra a negrilla del título  y el color de la misma:) danna*/}
+      <Navbar.Brand href="/" style={{ fontWeight: 'bold', color: 'black' }}>Book Corner</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
       <Navbar.Collapse id="basic-navbar-nav">
@@ -39,7 +40,7 @@ export function BarraNavegacion() {
         </Nav>
         <Form className="d-flex">
           <Form.Control type="search" placeholder="Buscar Libros" className="me-2" aria-label="Search" />
-          <Button variant="outline-light">Buscar</Button>
+          <Button variant="outline-light"  style={{ fontWeight: 'bold', color: 'black' }}>Buscar</Button>
         </Form>
         <Nav>
           <Button variant="dark" onClick={handleShowSignUp} >Sign Up</Button>
