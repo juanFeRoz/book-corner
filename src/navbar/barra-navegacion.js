@@ -8,6 +8,8 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import '../paginas/inicio.css';
+
 // para que al dar atras despues del logout no permita acceder
 
 export function BarraNavegacion() {
@@ -25,7 +27,7 @@ export function BarraNavegacion() {
   const handleCloseSignUp = () => setShowSignUp(false);
   const handleShowSignUp = () => setShowSignUp(true);
 {/* Le agregé color a la navbar para que no de vibras de funeral :) danna*/}
-  return <Navbar expand="lg" className="navbar navbar-light" style={{ backgroundColor: '#EBDEF0' }}>
+  return <Navbar expand="lg" className="navbar navbar-light" style={{ backgroundColor: '#6c757d' }}>
     <Container fluid>
       {/* Cambié la letra a negrilla del título  y el color de la misma:) danna*/}
       <Navbar.Brand href="/" style={{ fontWeight: 'bold', color: 'black' }}>Book Corner</Navbar.Brand>
@@ -40,7 +42,7 @@ export function BarraNavegacion() {
         </Nav>
         <Form className="d-flex">
           <Form.Control type="search" placeholder="Buscar Libros" className="me-2" aria-label="Search" />
-          <Button variant="outline-light"  style={{ fontWeight: 'bold', color: 'black' }}>Buscar</Button>
+          <Button variant="outline-light" className='botonracista'  style={{ fontWeight: 'bold', color: 'white' }}>Buscar</Button>
         </Form>
         <Nav>
           <Button variant="dark" onClick={handleShowSignUp} >Sign Up</Button>

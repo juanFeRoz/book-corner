@@ -5,10 +5,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { BarraNavegacion } from '../navbar/barra-navegacion';
 {/* Agregé la barra de navegacion  :) danna*/}
 
-
+{/* Agregé la Fondo  :) danna*/}
 const Encuesta =()=> {
   return (
-    <div style={{ backgroundColor: '#FEF9E7' }}>
+    <div className='fondoEncuesta'>
     <BarraNavegacion />{/* Así  :) danna*/}
     <Container>
    {/*centré el formulatrio y lo puse para que no acepte sin el @ del correo*/ }

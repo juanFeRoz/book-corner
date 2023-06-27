@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import { useNavigate } from "react-router-dom";
 import { Stack } from "react-bootstrap";
+import '../paginas/inicio.css';
 
 export default function BarraPrivada() {
   const navegacion = useNavigate();
@@ -15,7 +16,8 @@ export default function BarraPrivada() {
   }
   return (
     <>
-      <Navbar bg="dark" expand="lg" variant="dark">
+      <Navbar  expand="lg"  className="navbar navbar-light" style={{ backgroundColor: '#6c757d'}}>
+        {/* Le agregé color a la navbar para que no de vibras de funeral :) danna*/}
         <Container fluid>
           <Navbar.Brand href="/">Book Corner</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -1,14 +1,16 @@
 import React from "react";
 import { Container, Nav, Row } from "react-bootstrap";
-import g from "../img/g.png"
-import p from "../img/p.png"
-import t from "../img/t.png"
-import l from "../img/l.png"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook} from '@fortawesome/free-brands-svg-icons';
+import { faTwitter} from '@fortawesome/free-brands-svg-icons';
+import { faDiscord} from '@fortawesome/free-brands-svg-icons';
+import { faGithub} from '@fortawesome/free-brands-svg-icons';
+
 
 
 const Footer =() => {
     return (
-        <footer className="text-white py-5 bg-dark">
+        <footer className="text-white py-5 bg-black" >
                 <Container >
                     <Row>
                     
@@ -21,20 +23,20 @@ const Footer =() => {
                             <br/>
                             
                             {/* Cambié para que se vaya a otra pestaña cuando de en los iconos :) danna*/}
-                             <a href="https://github.com/juanFeRoz/book-corner/tree/contenido-pagina-principal" target="_blank" rel="noopener noreferrer">
-                                <img src={g} className="mx-2 m-auto" />
+                             <a href="https://github.com/juanFeRoz/book-corner/tree/contenido-pagina-principal" className="iconosfotter" target="_blank" rel="noopener noreferrer">
+                                <FontAwesomeIcon className="iconosfotter" icon={faGithub} />
                             </a>
 
-                            <a href="https://es-la.facebook.com/" target="_blank" rel="noopener noreferrer">
-                                <img src={p} className="mx-2 m-auto" />
+                            <a href="https://es-la.facebook.com/" className="iconosfotter" target="_blank" rel="noopener noreferrer">
+                               <FontAwesomeIcon className="iconosfotter" icon={faFacebook} />
                             </a>
 
-                            <a href="https://twitter.com/github?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" rel="noopener noreferrer">
-                                <img src={t} className="mx-2  m-auto" />
+                            <a href="https://twitter.com/github?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" className="iconosfotter" target="_blank" rel="noopener noreferrer">
+                                <FontAwesomeIcon  icon={faTwitter} />
                             </a>
 
-                            <a href="https://www.linkedin.com/company/github" target="_blank" rel="noopener noreferrer">
-                                <img src={l} className="mx-2  m-auto" />
+                            <a href="https://www.linkedin.com/company/github" target="_blank" rel="noopener noreferrer" className="iconosfotter">
+                                <FontAwesomeIcon  icon={faDiscord} />
                             </a>
 
                             </h2>
