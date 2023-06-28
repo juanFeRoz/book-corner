@@ -1,16 +1,15 @@
-# Book Corner 
-Es un proyecto que busca crear una pagina web donde se puedan subir y descargar libros en formato pdf.
+# Book Corner
 
-## Scripts Importantes
+Es un proyecto que busca crear una biblioteca en la web, donde se puedan acceder a titulos en formato pdf.
 
-En el directorio principal del proyecto se pueden correr los siguientes scripts:
-### `npm start`
+## Instalacion de dependencias:
 
-Corre la aplicacion en modo de desarrolo
+En los subdirectorios frontend y backend del proyecto se deben instalar las dependencias necesarias con `npm install`
 
-### `npm install` 
+## Iniciar el servidor del backend
 
-Instala las dependencias requeridas por el proyecto
+Dentro de la carpeta backend usa `npm run dev` para iniciar el backend
 
-### `npm install react-icons --save`
-Agrega los iconos necesarios para el proyecto
+## Iniciar el frontend
+
+En la carpeta de frontend usa el comando `npm start` para iniciar react
