@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 const express = require("express");
 const bookRoutes = require("./routes/books");
 const authorRoutes = require("./routes/authors");
@@ -23,12 +21,14 @@ app.use("/genres", genreRoutes);
 
 // conectarse a mongodb
 mongoose
-    .connect(process.env.MONGO_URI)
+    .connect(
+        "mongodb+srv://juanfeliperojas010:D0UJkVLxj6thIlyu@book-corner-database.anegrmf.mongodb.net/?retryWrites=true&w=majority"
+    )
     .then(() => {
         // escuchar requests
-        app.listen(process.env.PORT, () => {
+        app.listen(4000, () => {
             console.log(
-                `conectado a la base de datos y escuchando en el port ${process.env.PORT}`
+                `conectado a la base de datos y escuchando en el puerto 4000`
             );
         });
     })
