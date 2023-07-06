@@ -26,11 +26,12 @@ const getGenre = async (req, res) => {
 
 // crear un nuevo genero
 const createGenre = async (req, res) => {
-    const { name } = req.body;
+    const { name, img } = req.body;
 
     try {
         const genre = await Genre.create({
             name,
+            img,
         });
         res.status(200).json(genre);
     } catch (error) {
@@ -55,7 +56,7 @@ const deleteGenre = async (req, res) => {
 };
 // actualizar un genero
 const updateGenre = async (req, res) => {
-    const { id } = req.params;
+    const { id, img } = req.params;
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(404).json({ error: "No existe tal genero" });
     }
@@ -64,6 +65,7 @@ const updateGenre = async (req, res) => {
         { _id: id },
         {
             ...req.body,
+            img,
         }
     );
 
