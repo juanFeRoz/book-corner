@@ -2,6 +2,7 @@ const express = require("express");
 const bookRoutes = require("./routes/books");
 const authorRoutes = require("./routes/authors");
 const genreRoutes = require("./routes/genres");
+const userRoutes = require("./routes/users");
 const mongoose = require("mongoose");
 
 // express app
@@ -18,6 +19,7 @@ app.use((req, res, next) => {
 app.use("/books", bookRoutes);
 app.use("/authors", authorRoutes);
 app.use("/genres", genreRoutes);
+app.use("/users/", userRoutes);
 
 // conectarse a mongodb
 mongoose
