@@ -1,11 +1,23 @@
 import React from "react";
-import { Modal, Container, Button } from "react-bootstrap";
+import { Modal, Container, Button, Form, InputGroup } from "react-bootstrap";
+import { FaEye, FaEyeSlash } from "react-icons";
 import { useState } from "react";
 
 export function SignUpModal({ show, handleClose }) {
-    const [email, setEmail] = useState("");
-
+    // Estado para controlar la visibilidad de la contraseña
+    const [showPassword, setShowPassword] = useState(false);
+    // Estado para almacenar el valor de la contraseña
     const [password, setPassword] = useState("");
+
+    // Función para validar la contraseña
+    const validate = (password) => {
+        if (password.length < 5)
+            return "Contraseña debe tener al menos 5 caracteres";
+        return null;
+    };
+
+    // Obtener el mensaje de error de validación
+    const errorMessage = validate(password);
 
     return (
         <Modal show={show} onHide={handleClose}>
@@ -14,71 +26,56 @@ export function SignUpModal({ show, handleClose }) {
             </Modal.Header>
             <Modal.Body>
                 <Container>
-                    <form className='ancho' onSubmit={handleClose}>
-                        <div class='mb-3 mt-3'>
-                            <label for='email' class='form-label'>
-                                Email:
-                            </label>
-                            <input
+                    <Form className='ancho'>
+                        <Form.Group className='mb-3 mt-3'>
+                            <Form.Label htmlFor='email'>Email:</Form.Label>
+                            <Form.Control
                                 type='email'
-                                class='form-control'
+                                className='form-control'
                                 id='email'
                                 placeholder='Enter email'
                                 name='email'
-                                autoComplete='off'
-                                onChange={(e) => setEmail(e.target.value)}
-                                value={email}
                             />
-                        </div>
-                        <div class='mb-3'>
-                            <label for='date' class='form-label'>
+                        </Form.Group>
+                        <Form.Group className='mb-3'>
+                            <Form.Label htmlFor='date'>
                                 ¿Cuándo naciste?
-                            </label>
-                            <input
+                            </Form.Label>
+                            <Form.Control
                                 type='date'
-                                class='form-control'
+                                className='form-control'
                                 id='date'
                                 placeholder='Enter fecha nacimiento'
                                 name='fecha_nacimiento'
                             />
-                        </div>
-                        <div class='mb-3'>
-                            <label for='pwd' class='form-label'>
-                                Password:
-                            </label>
-                            <input
-                                type='password'
-                                class='form-control'
-                                id='pwd'
-                                placeholder='contraseña'
-                                name='password'
-                                value={password}
-                                onChange={(ev) => setPassword(ev.target.value)}
-                            />
-                            <p>{errorMessage}</p>
-                        </div>
-
-                        <div class='form-check mb-3'>
-                            <label class='form-check-label'>
-                                <input
-                                    class='form-check-input'
-                                    type='checkbox'
-                                    name='remember'
-                                />{" "}
-                                Acepto los terminos y condiciones
-                            </label>
-                        </div>
-                        <button type='submit' class='btn btn-primary'>
-                            Submit
-                        </button>
-                    </form>
+                        </Form.Group>
+                        <Form.Group className='mb-3'>
+                            <InputGroup>
+                                <Form.Control
+                                    type={showPassword ? "text" : "password"}
+                                    className='form-control'
+                                    placeholder='contraseña'
+                                    value={password}
+                                    id='pwd'
+                                    name='password'
+                                    onChange={(e) =>
+                                        setPassword(e.target.value)
+                                    }
+                                />
+                                <Button
+                                    onClick={() =>
+                                        setShowPassword(!showPassword)
+                                    }
+                                >
+                                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                                </Button>
+                            </InputGroup>
+                            {/* Mostrar mensaje de error si existe */}
+                            {errorMessage && <p>{errorMessage}</p>}
+                        </Form.Group>
+                    </Form>
                 </Container>
             </Modal.Body>
-            <Modal.Footer>
-                <Button variant='secondary' onClick={handleClose}>
-                    Cerrar
-                </Button>
-            </Modal.Footer>
         </Modal>
     );
 }
