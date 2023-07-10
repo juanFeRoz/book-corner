@@ -29,6 +29,10 @@ const bookSchema = new Schema(
             type: String,
             required: true,
         },
+        favorite: {
+            type: Boolean,
+            required: false,
+        },
     },
     { timestamps: true }
 );

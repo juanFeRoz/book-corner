@@ -15,7 +15,7 @@ const getBook = async (req, res) => {
         return res.status(404).json({ error: "No existe tal libro" });
     }
 
-    const book = Book.findById(id);
+    const book = await Book.findById(id);
 
     if (!book) {
         return res.status(400).json({ error: "No existe tal libro" });
@@ -56,6 +56,7 @@ const deleteBook = async (req, res) => {
 
     res.status(200).json(book);
 };
+
 // actualizar un libro
 const updateBook = async (req, res) => {
     const { id } = req.params;
