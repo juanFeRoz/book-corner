@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal, Container, Button, Form, InputGroup } from "react-bootstrap";
-import { FaEye, FaEyeSlash } from "react-icons";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
 
 export function SignUpModal({ show, handleClose }) {
