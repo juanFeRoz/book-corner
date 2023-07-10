@@ -6,6 +6,7 @@ import Error404 from "../paginas/error404"
 import Recuperacion from "../paginas/recuperacion"
 import Router2 from "./Router2"
 import Nosotros from "../paginas/Nosotros";
+import Libros from "../paginas/libros"
 
 
 const Router1 = () => {
@@ -13,7 +14,7 @@ const Router1 = () => {
     <>
     <Routes>
         <Route path="/" element={<Inicio />} />
-        <Route path="/inicio" element={<Inicio />} />
+        <Route path="/libros" element={<Libros />} />
         <Route path="/Autores" element={<Autores />} />
         <Route path="/generos" element={<Generos />} />
         <Route path="/recuperacion" element={<Recuperacion />} />
