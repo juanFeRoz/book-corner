@@ -13,7 +13,6 @@ const bookSchema = new Schema(
         },
 
         author: {
-            
             type: String,
             required: true,
         },
@@ -27,20 +26,15 @@ const bookSchema = new Schema(
             type: String,
             required: true,
         },
-<<<<<<< HEAD
         favorite: {
             type: Boolean,
             required: false,
         },
-=======
 
         portada: {
             type: String,
             required: true,
-
         },
-
->>>>>>> origin/valentina
     },
     { timestamps: true }
 );
