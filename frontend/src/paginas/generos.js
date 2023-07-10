@@ -7,7 +7,7 @@ const Generos = () => {
 
     useEffect(() => {
         const fetchGenres = async () => {
-            const response = await fetch("http://localhost:4000/genres");
+            const response = await fetch("/genres");
             const json = await response.json();
 
             if (response.ok) {
