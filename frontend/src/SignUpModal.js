@@ -1,67 +1,60 @@
 import React from "react";
-import { Modal, Container, Button } from "react-bootstrap";
+import { Modal, Container, Button, Form, InputGroup } from "react-bootstrap";
 import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-export function SignUpModal({
-  show,
-  handleClose
-}) {
+export function SignUpModal({ show, handleClose }) {
+  // Estado para controlar la visibilidad de la contraseña
+  const [showPassword, setShowPassword] = useState(false);
+  // Estado para almacenar el valor de la contraseña
+  const [password, setPassword] = useState("");
 
-  const [password, setPassword] = useState('');
-
+  // Función para validar la contraseña
   const validate = (password) => {
-    if (password.length < 5) return 'Contraseña debe ser mayor de 5 caracters';
-  }
+    if (password.length < 5) return "Contraseña debe tener al menos 5 caracteres";
+    return null;
+  };
 
+  // Obtener el mensaje de error de validación
   const errorMessage = validate(password);
 
-  return <Modal show={show} onHide={handleClose}>
-    <Modal.Header closeButton>
-      <Modal.Title>Sign Up</Modal.Title>
-    </Modal.Header>
-    <Modal.Body>
-      <Container>
-        <form action="/" className='ancho'>
-
-          <div class="mb-3 mt-3">
-            <label for="email" class="form-label" >Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" autoComplete='off' />
-          </div>
-          <div class="mb-3">
-            <label for="date" class="form-label">¿Cuándo naciste?</label>
-            <input type="date" class="form-control" id="date" placeholder="Enter fecha nacimiento" name="fecha_nacimiento" />
-
-          </div>
-          <div class="mb-3">
-            <label for="pwd" class="form-label">Password:</label>
-            <input
-              type="password"
-              class="form-control"
-              id="pwd"
-              placeholder="contraseña"
-              name="password"
-              value={password}
-              onChange={ev => setPassword(ev.target.value)}
-            />
-            <p>{errorMessage}</p>
-
-          </div>
-
-
-          <div class="form-check mb-3">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" name="remember" /> Acepto los terminos y condiciones
-            </label>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </Container>
-
-    </Modal.Body>
-    <Modal.Footer>
-      <Button variant="secondary" onClick={handleClose}>
-        Cerrar
-      </Button>
-    </Modal.Footer>
-  </Modal>;
+  return (
+    <Modal show={show} onHide={handleClose}>
+      <Modal.Header closeButton>
+        <Modal.Title>Sign Up</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <Container>
+          <Form className='ancho'>
+            <Form.Group className="mb-3 mt-3">
+              <Form.Label htmlFor="email">Email:</Form.Label>
+              <Form.Control type="email" className="form-control" id="email" placeholder="Enter email" name="email" />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label htmlFor="date">¿Cuándo naciste?</Form.Label>
+              <Form.Control type="date" className="form-control" id="date" placeholder="Enter fecha nacimiento" name="fecha_nacimiento" />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <InputGroup>
+                <Form.Control
+                  type={showPassword ? "text" : "password"}
+                  className="form-control"
+                  placeholder="contraseña"
+                  value={password}
+                  id="pwd"
+                  name="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <Button onClick={() => setShowPassword(!showPassword)}>
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </Button>
+              </InputGroup>
+              {/* Mostrar mensaje de error si existe */}
+              {errorMessage && <p>{errorMessage}</p>}
+            </Form.Group>
+          </Form>
+        </Container>
+      </Modal.Body>
+    </Modal>
+  );
 }
