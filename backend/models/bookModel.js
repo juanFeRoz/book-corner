@@ -13,26 +13,34 @@ const bookSchema = new Schema(
         },
 
         author: {
-            type: Schema.Types.ObjectId,
-            ref: "Author",
+            
+            type: String,
             required: true,
         },
 
-        genre: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: "Genre",
-            },
-        ],
+        genre: {
+            type: String,
+            required: true,
+        },
 
         download: {
             type: String,
             required: true,
         },
+<<<<<<< HEAD
         favorite: {
             type: Boolean,
             required: false,
         },
+=======
+
+        portada: {
+            type: String,
+            required: true,
+
+        },
+
+>>>>>>> origin/valentina
     },
     { timestamps: true }
 );

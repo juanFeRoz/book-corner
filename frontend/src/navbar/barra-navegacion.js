@@ -51,7 +51,7 @@ export function BarraNavegacion() {
 
                 <Navbar.Collapse id='basic-navbar-nav'>
                     <Nav className='me-auto'>
-                        <Nav.Link href='/inicio'>Inicio</Nav.Link>
+                        <Nav.Link href='/libros'>Libros</Nav.Link>
                         <Nav.Link href='/autores'>Autores</Nav.Link>
                         <Nav.Link href='/generos'>Generos</Nav.Link>
                         {user && (

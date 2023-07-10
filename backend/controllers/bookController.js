@@ -34,6 +34,7 @@ const createBook = async (req, res) => {
             author,
             genre,
             download,
+            portada,
         });
         res.status(200).json(book);
     } catch (error) {
