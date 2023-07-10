@@ -13,7 +13,7 @@ router.get("/", getBooks);
 // GET un solo libro
 router.get("/:id", getBook);
 // POST un libro
-router.post("/:id", createBook);
+router.post("/", createBook);
 
 // DELETE un libro
 router.delete("/:id", deleteBook);
