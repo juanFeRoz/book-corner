@@ -13,6 +13,6 @@ router.post("/login", loginUser);
 router.post("/signup", signupUser);
 
 // add favorite route
-router.post("/addfavorite", addFavoriteUser);
+router.patch("/:id", addFavoriteUser);
 
 module.exports = router;
