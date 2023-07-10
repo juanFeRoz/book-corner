@@ -10,7 +10,7 @@ function BasicExample() {
     // hook para traer los autores de la base de datos cuando cargue la pagina
     useEffect(() => {
         const fetchAutores = async () => {
-            const response = await fetch("http://localhost:4000/authors");
+            const response = await fetch("/authors");
             const json = await response.json();
 
             if (response.ok) {
