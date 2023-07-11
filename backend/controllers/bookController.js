@@ -1,6 +1,7 @@
 const Book = require("../models/bookModel");
 const mongoose = require("mongoose");
-
+const Author = require("../models/authorModel");
+const Genre = require("../models/genreModel");
 
 // ver todos los libros
 const getBooks = async (req, res) => {
@@ -16,7 +17,7 @@ const getBook = async (req, res) => {
         return res.status(404).json({ error: "No existe tal libro" });
     }
 
-    const book = await Book.findById(id);
+    const book = Book.findById(id);
 
     if (!book) {
         return res.status(400).json({ error: "No existe tal libro" });
@@ -27,7 +28,7 @@ const getBook = async (req, res) => {
 
 // crear un nuevo libro
 const createBook = async (req, res) => {
-    const { title, summary, author, genre, download } = req.body;
+    const { title, summary, author, genre, download,portada } = req.body;
     try {
         const book = await Book.create({
             title,
@@ -35,8 +36,8 @@ const createBook = async (req, res) => {
             author,
             genre,
             download,
-            favorite,
             portada,
+        
         });
         res.status(200).json(book);
     } catch (error) {
@@ -59,7 +60,6 @@ const deleteBook = async (req, res) => {
 
     res.status(200).json(book);
 };
-
 // actualizar un libro
 const updateBook = async (req, res) => {
     const { id } = req.params;
