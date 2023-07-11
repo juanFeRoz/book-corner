@@ -14,7 +14,7 @@ router.get("/", getGenres);
 // GET un solo genero
 router.get("/:id", getGenre);
 // POST un genero
-router.post("/:id", createGenre);
+router.post("/", createGenre);
 // DELETE un genero
 router.delete("/:id", deleteGenre);
 // UPDATE un genero

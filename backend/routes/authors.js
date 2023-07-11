@@ -14,7 +14,7 @@ router.get("/", getAuthors);
 // GET un solo autor
 router.get("/:id", getAuthor);
 // POST un autor
-router.post("/:id", createAuthor);
+router.post("/", createAuthor);
 // DELETE un autor
 router.delete("/:id", deleteAuthor);
 // UPDATE un autor

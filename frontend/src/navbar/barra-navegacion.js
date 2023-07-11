@@ -6,10 +6,10 @@ import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useLogout } from "../hooks/useLogout";
 import "../paginas/inicio.css";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 // para que al dar atras despues del logout no permita acceder
 
@@ -19,6 +19,7 @@ export function BarraNavegacion() {
     //     navegacion("/miLista", { replace: true });
     // };
 
+    const { user } = useAuthContext();
     const [showLogin, setShowLogin] = useState(false);
     const handleCloseLogin = () => setShowLogin(false);
     const handleShowLogin = () => setShowLogin(true);
@@ -53,10 +54,14 @@ export function BarraNavegacion() {
                         <Nav.Link href='/libros'>Libros</Nav.Link>
                         <Nav.Link href='/autores'>Autores</Nav.Link>
                         <Nav.Link href='/generos'>Generos</Nav.Link>
-                        <Nav.Link href='/miLista'>Mi lista</Nav.Link>
-                        <Nav.Link href='/encuesta'>
-                            Encuesta de interés
-                        </Nav.Link>
+                        {user && (
+                            <>
+                                <Nav.Link href='/miLista'>Mi lista</Nav.Link>
+                                <Nav.Link href='/encuesta'>
+                                    Encuesta de interés
+                                </Nav.Link>
+                            </>
+                        )}
                     </Nav>
                     <Form className='d-flex'>
                         <Form.Control
@@ -73,19 +78,26 @@ export function BarraNavegacion() {
                             Buscar
                         </Button>
                     </Form>
-                    <div>
-                        <Button variant='dark' onClick={handleLogout}>
-                            Logout
-                        </Button>
-                    </div>
-                    <div>
-                        <Button variant='dark' onClick={handleShowSignUp}>
-                            Sign Up
-                        </Button>
-                        <Button variant='dark' onClick={handleShowLogin}>
-                            Login
-                        </Button>
-                    </div>
+                    {!user && (
+                        <div>
+                            <Button variant='dark' onClick={handleShowSignUp}>
+                                Sign Up
+                            </Button>
+                            <Button variant='dark' onClick={handleShowLogin}>
+                                Login
+                            </Button>
+                        </div>
+                    )}
+                    {user && (
+                        <>
+                            <div>
+                                <Button variant='dark' onClick={handleLogout}>
+                                    Logout
+                                </Button>
+                            </div>
+                            <span>{user.email}</span>
+                        </>
+                    )}
                     <LoginModal
                         show={showLogin}
                         handleClose={handleCloseLogin}
