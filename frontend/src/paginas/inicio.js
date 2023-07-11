@@ -31,7 +31,6 @@ export default function Inicio() {
           <Col>
 
             <h2>Descargar libros gratis</h2>
-          
             <p className='lead'>¿No sabes exactamente lo que buscas? ¡nuestros filtros te pueden ayudar!</p>
             <ul style={{listStyle: "none"}}>
               <li>

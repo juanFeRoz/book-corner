@@ -80,7 +80,7 @@ function Librotes() {
                 ))}
             </div>   
          <div className="espacio"></div>
-        <Footer/>
+            <Footer/>
         </div>
         </>
     );
