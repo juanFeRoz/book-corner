@@ -31,40 +31,54 @@ function Librotes() {
             
             <h1 className="titulo">Libros Populares</h1>
             
-            
-            {books &&
+            <div className="contenedorcajitas">
+                {books &&
+
                 books.map((Book) => (
+
                     
                     <div className="cajita">
-                        <h2>{Book.title}</h2>
+                        <div className="titulocontenedor">
+                            <h2>{Book.title}</h2>
+                        </div>
                         <div className="imagen">
                             <img
                                 src={Book.portada}
                                 alt=''
                             />
                         </div>
-                        <div className="sinopsis">
-                        <h6>Sinopsis:</h6>
-                        {Book.summary}
-                        </div>
-                        <div>
-                        <h6>Autor</h6>
-                        {Book.author}
-                        </div>
+                        <div className="contenedorinfo">
 
-                        <div>
-                        <h6>Género</h6>
-                        el hgneero {Book.genre}
-                        </div>
 
-                        <div>
-                        <h6>Link</h6>
-                        {Book.download}
+
+                            <div className="sinopsis">
+                                <h6>Link:</h6>
+                                <a href={Book.download}>DESCARGAR</a>
+                            </div>
+
+                            <div>
+                                <h6>Autor:</h6>
+                                {Book.author}
+                            </div>
+
+                            <div>
+                                <h6>Género:</h6>
+                                {Book.genre}
+                            </div>
+
+                            <div >
+                                <h6>Sinopsis:</h6>
+                               {Book.summary}
+                            </div>
+
                         </div>
 
                     </div>
+
+                    
                      
                 ))}
+            </div>   
          <div className="espacio"></div>
         <Footer/>
         </div>
