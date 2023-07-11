@@ -1,7 +1,6 @@
 const Book = require("../models/bookModel");
 const mongoose = require("mongoose");
-const Author = require("../models/authorModel");
-const Genre = require("../models/genreModel");
+
 
 // ver todos los libros
 const getBooks = async (req, res) => {

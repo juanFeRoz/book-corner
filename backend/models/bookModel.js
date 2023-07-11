@@ -13,16 +13,15 @@ const bookSchema = new Schema(
         },
 
         author: {
-            type: String,
+           type: String,
             required: true,
         },
 
-        genre: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: "Genre",
-            },
-        ],
+        genre: {
+            type : String,
+            
+            required: true,
+        },
 
         download: {
             type: String,
