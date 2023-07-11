@@ -28,7 +28,7 @@ const getBook = async (req, res) => {
 
 // crear un nuevo libro
 const createBook = async (req, res) => {
-    const { title, summary, author, genre, download,portada } = req.body;
+    const { title, summary, author, genre, download,portada,favorite} = req.body;
     try {
         const book = await Book.create({
             title,
@@ -37,6 +37,7 @@ const createBook = async (req, res) => {
             genre,
             download,
             portada,
+            favorite,
         
         });
         res.status(200).json(book);
