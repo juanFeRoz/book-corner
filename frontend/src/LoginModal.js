@@ -2,15 +2,17 @@ import React from "react";
 import { Modal, Container, Form, Button, InputGroup } from "react-bootstrap";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useLogin } from "./hooks/useLogin";
 
-export function LoginModal({ show, handleClose, login }) {
+export function LoginModal({ show, handleClose }) {
     const [showPassword, setShowPassword] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const { login, error, isLoading } = useLogin();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(email, password);
+        await login(email, password);
     };
 
     return (
@@ -53,7 +55,10 @@ export function LoginModal({ show, handleClose, login }) {
                                 </Button>
                             </InputGroup>
                         </Form.Group>
-                        <Button type='submit'>Login</Button>
+                        <Button type='submit' disabled={isLoading}>
+                            Login
+                        </Button>
+                        {error && <div>{error}</div>}
                     </Form>
                 </Container>
             </Modal.Body>

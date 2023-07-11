@@ -7,8 +7,8 @@ Es un proyecto que busca crear una biblioteca en la web, donde se puedan acceder
 En los subdirectorios frontend y backend del proyecto se deben instalar las dependencias necesarias con `npm install`
 
 ## Iniciar el servidor del backend
-
-Dentro de la carpeta backend usa `npm run dev` para iniciar el backend
+Dentro de la carpeta backend usa  `npm i nodemon ` luego,
+en el mismo terminal  usa `npm run dev` para iniciar el backend
 
 ## Iniciar el frontend
 

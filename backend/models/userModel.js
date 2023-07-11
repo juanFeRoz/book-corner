@@ -14,12 +14,6 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
-    favoriteBooks: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "Book",
-        },
-    ],
 });
 
 // static signup method
@@ -34,9 +28,7 @@ userSchema.statics.signup = async function (email, password) {
     }
 
     if (!validator.isStrongPassword(password)) {
-        throw Error(
-            "Password must contain uppercase, lowercase, numbers and symbols"
-        );
+        throw Error("Password is too weak");
     }
 
     const exists = await this.findOne({ email });
