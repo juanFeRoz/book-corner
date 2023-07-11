@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import React from 'react'
 import { BarraNavegacion } from '../navbar/barra-navegacion';
-import Accordion from "react-bootstrap/Accordion";
+import Footer from "../paginas/Footer.js"
+import './libros.css';
 
 
 function Librotes() {
@@ -23,10 +24,17 @@ function Librotes() {
     }, []);
 
     return (
-        <div>
+        <>
+        <div className="contenedor">
+            
             <BarraNavegacion />
+            
+            <h1 className="titulo">Libros Populares</h1>
+            
+            
             {books &&
                 books.map((Book) => (
+                    
                     <div className="cajita">
                         <h2>{Book.title}</h2>
                         <div className="imagen">
@@ -36,29 +44,31 @@ function Librotes() {
                             />
                         </div>
                         <div className="sinopsis">
-                        <h3>Sinopsis</h3>
+                        <h6>Sinopsis:</h6>
                         {Book.summary}
                         </div>
                         <div>
-                        <h3>Autor</h3>
+                        <h6>Autor</h6>
                         {Book.author}
                         </div>
 
                         <div>
-                        <h3>Género</h3>
+                        <h6>Género</h6>
                         el hgneero {Book.genre}
                         </div>
 
                         <div>
-                        <h3>Link</h3>
+                        <h6>Link</h6>
                         {Book.download}
                         </div>
 
                     </div>
                      
                 ))}
-
+         <div className="espacio"></div>
+        <Footer/>
         </div>
+        </>
     );
 }
 
